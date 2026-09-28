@@ -1,0 +1,7 @@
+pandas>=2.0
+numpy>=1.26
+pypdf>=4.0
+streamlit>=1.50
+pytest>=8
+# only needed to regenerate the sample invoice PDFs:
+# reportlab>=4.0

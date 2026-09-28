@@ -1,0 +1,92 @@
+{
+  "01_kerman_nuts.pdf": {
+    "vendor": "Kerman Nuts Ltd.",
+    "invoice_no": "KN-4471",
+    "invoice_date": "2026-09-14",
+    "due_date": "2026-10-14",
+    "subtotal": 2018.4,
+    "tax": 0.0,
+    "total": 2018.4,
+    "planted_issue": null
+  },
+  "02_pacific_dairy.pdf": {
+    "vendor": "Pacific Dairy",
+    "invoice_no": "PD-99812",
+    "invoice_date": "2026-09-15",
+    "due_date": "2026-09-29",
+    "subtotal": 1192.14,
+    "tax": 0.0,
+    "total": 1192.14,
+    "planted_issue": null
+  },
+  "03_sparkleclean.pdf": {
+    "vendor": "SparkleClean Services",
+    "invoice_no": "SC-2026-09",
+    "invoice_date": "2026-09-30",
+    "due_date": "2026-10-30",
+    "subtotal": 1200.0,
+    "tax": 144.0,
+    "total": 1344.0,
+    "planted_issue": null
+  },
+  "04_cooltech.pdf": {
+    "vendor": "CoolTech Refrigeration",
+    "invoice_no": "CT-1188",
+    "invoice_date": "2026-09-18",
+    "due_date": "2026-10-03",
+    "subtotal": 594.0,
+    "tax": 71.28,
+    "total": 665.28,
+    "planted_issue": null
+  },
+  "05_golden_grain.pdf": {
+    "vendor": "Golden Grain Imports",
+    "invoice_no": "GG-7730",
+    "invoice_date": "2026-09-16",
+    "due_date": "2026-10-16",
+    "subtotal": 1863.2,
+    "tax": 0.0,
+    "total": 1897.2,
+    "planted_issue": "total_mismatch"
+  },
+  "06_fraser_valley.pdf": {
+    "vendor": "Fraser Valley Produce",
+    "invoice_no": "FVP-5521",
+    "invoice_date": "2026-09-17",
+    "due_date": "2026-09-24",
+    "subtotal": 925.0,
+    "tax": 0.0,
+    "total": 925.0,
+    "planted_issue": "line_items_mismatch"
+  },
+  "07_local_ads.pdf": {
+    "vendor": "Local Ads Media",
+    "invoice_no": "LAM-340",
+    "invoice_date": "2026-09-20",
+    "due_date": "2026-10-20",
+    "subtotal": 900.0,
+    "tax": 135.0,
+    "total": 1035.0,
+    "planted_issue": "wrong_tax_rate"
+  },
+  "08_zarrin_duplicate.pdf": {
+    "vendor": "Zarrin Saffron Co.",
+    "invoice_no": "ZAR-260907",
+    "invoice_date": "2026-09-21",
+    "due_date": "2026-10-06",
+    "subtotal": 824.0,
+    "tax": 0.0,
+    "total": 824.0,
+    "planted_issue": "duplicate_invoice"
+  },
+  "09_unknown_vendor.pdf": {
+    "vendor": "Premium Pistachio Traders",
+    "invoice_no": "PPT-0001",
+    "invoice_date": "2026-09-22",
+    "due_date": "2026-09-23",
+    "subtotal": 2400.0,
+    "tax": 0.0,
+    "total": 2400.0,
+    "planted_issue": "unknown_vendor"
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {"q": "What was total revenue in March 2026?", "sql": "SELECT ROUND(SUM(amount),2) FROM transactions WHERE type='income' AND substr(date,1,7)='2026-03'"},
+  {"q": "Which month had the highest sales?", "sql": "SELECT substr(date,1,7) m FROM transactions WHERE type='income' GROUP BY m ORDER BY SUM(amount) DESC LIMIT 1"},
+  {"q": "What were total expenses over the whole year?", "sql": "SELECT ROUND(SUM(amount),2) FROM transactions WHERE type='expense'"},
+  {"q": "How much did we pay Kerman Nuts Ltd. in total?", "sql": "SELECT ROUND(SUM(amount),2) FROM transactions WHERE vendor='Kerman Nuts Ltd.'"},
+  {"q": "What was our total profit for the year?", "sql": "SELECT ROUND(SUM(CASE WHEN type='income' THEN amount ELSE -amount END),2) FROM transactions"},
+  {"q": "Which expense category was the biggest?", "sql": "SELECT category FROM transactions WHERE type='expense' GROUP BY category ORDER BY SUM(amount) DESC LIMIT 1"},
+  {"q": "How much did we spend on utilities in January 2026?", "sql": "SELECT ROUND(SUM(amount),2) FROM transactions WHERE category='Utilities' AND substr(date,1,7)='2026-01'"},
+  {"q": "In which months did we lose money?", "sql": "SELECT m FROM (SELECT substr(date,1,7) m, SUM(CASE WHEN type='income' THEN amount ELSE -amount END) p FROM transactions GROUP BY m) WHERE p < 0 ORDER BY m"},
+  {"q": "How much did we spend on refrigeration repairs?", "sql": "SELECT ROUND(SUM(amount),2) FROM transactions WHERE category='Repairs'"},
+  {"q": "When did we start paying for CloudBackup Pro?", "sql": "SELECT MIN(date) FROM transactions WHERE vendor='CloudBackup Pro'"}
+]
