@@ -54,9 +54,9 @@ VENDORS = [
     ("Fraser Valley Produce", "Suppliers", 0.0, 7),
     ("SparkleClean Services", "Services", 0.12, 30),
     ("CoolTech Refrigeration", "Repairs", 0.12, 15),
-    ("BC Hydro", "Utilities", 0.05, 21),
-    ("FortisBC Gas", "Utilities", 0.05, 21),
-    ("Telus Business", "Utilities", 0.12, 30),
+    ("Lower Mainland Power", "Utilities", 0.05, 21),
+    ("Cascade Gas Co.", "Utilities", 0.05, 21),
+    ("NorthNet Business", "Utilities", 0.12, 30),
     ("Kingsway Properties", "Rent", 0.05, 1),
     ("SquarePOS", "Software", 0.12, 1),
     ("QuickLedger", "Software", 0.12, 1),
@@ -111,9 +111,9 @@ def main():
             add(d, "expense", "Marketing", "Local Ads Media", "Local ads", random.choice([600, 800, 1200]))
         if d.day == 15:
             winter = d.month in (11, 12, 1, 2)
-            add(d, "expense", "Utilities", "BC Hydro", "Electricity", random.gauss(2300 if winter else 1700, 120))
-            add(d, "expense", "Utilities", "FortisBC Gas", "Gas", random.gauss(900 if winter else 350, 60))
-            add(d, "expense", "Utilities", "Telus Business", "Internet & phone", 212.80)
+            add(d, "expense", "Utilities", "Lower Mainland Power", "Electricity", random.gauss(2300 if winter else 1700, 120))
+            add(d, "expense", "Utilities", "Cascade Gas Co.", "Gas", random.gauss(900 if winter else 350, 60))
+            add(d, "expense", "Utilities", "NorthNet Business", "Internet & phone", 212.80)
             add(d, "expense", "Services", "SparkleClean Services", "Monthly cleaning", 1344)
         if d.weekday() == 4 and (d - START).days // 7 % 2 == 0:  # every 2nd Friday
             add(d, "expense", "Payroll", None, "Staff payroll", random.gauss(17500, 400))

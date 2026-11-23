@@ -22,7 +22,12 @@ def query(sql: str, params: tuple = ()) -> pd.DataFrame:
 def schema_text() -> str:
     with ro() as con:
         rows = con.execute("SELECT sql FROM sqlite_master WHERE type='table'").fetchall()
-    return "\n".join(r[0] for r in rows)
+        cats = [r[0] for r in con.execute("SELECT DISTINCT category FROM transactions ORDER BY 1")]
+        vendors = [r[0] for r in con.execute("SELECT DISTINCT vendor FROM transactions WHERE vendor IS NOT NULL ORDER BY 1")]
+    text = "\n".join(r[0] for r in rows)
+    text += "\n\nExact values of transactions.category: " + ", ".join(cats)
+    text += "\nExact values of transactions.vendor: " + ", ".join(vendors)
+    return text
 
 
 def monthly() -> pd.DataFrame:

@@ -16,6 +16,13 @@ Notes:
 - Sales are rows with category = 'Sales'. Profit = income - expenses.
 - Dates are TEXT 'YYYY-MM-DD'. Month: substr(date,1,7). Data covers 2025-10-01 to 2026-09-30.
 - Round money to 2 decimals.
+- Monthly profit pattern (use it for any profit / loss / 'lose money' question):
+  SELECT substr(date,1,7) AS month, ROUND(SUM(CASE WHEN type='income' THEN amount ELSE -amount END),2) AS profit
+  FROM transactions GROUP BY month
+- 'Lost money' means that month's profit < 0. Include the profit column so the answer can show the amounts.
+- Only use category and vendor values from the exact lists above. A product or service name (e.g. a subscription or a repair company) is usually a vendor; match with vendor LIKE '%word%' if unsure.
+- 'The year' or 'the whole year' means all data (2025-10-01 to 2026-09-30), with no date filter.
+- Keep queries simple: one GROUP BY, no date filters unless the question names a period.
 Return ONLY JSON: {{"sql": "<one SELECT query>"}}"""
 
 ANSWER_SYSTEM = """You are a finance assistant. Answer the question in 1-3 sentences using ONLY the query result.
